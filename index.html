@@ -1,81 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="description" name="description">
-  <meta name="google" content="notranslate" />
-  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simanta Karki — Computer Engineer</title>
+<meta name="description" content="Simanta Karki — Computer Engineering student focused on Data Science and Machine Learning. Projects, background, and contact.">
+<meta name="theme-color" content="#05060f">
 
-  <!-- Disable tap highlight on IE -->
-  <meta name="msapplication-tap-highlight" content="no">
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
-  <link href="./assets/favicon.ico" rel="icon">
+<link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
 
-  <title>Title page</title>  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<link href="./main.3f6952e4.css" rel="stylesheet"></head>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
 
-<body class="minimal">
-<div id="site-border-left"></div>
-<div id="site-border-right"></div>
-<div id="site-border-top"></div>
-<div id="site-border-bottom"></div>
-<!-- Add your content of header -->
-<header>
-  <nav class="navbar  navbar-fixed-top navbar-inverse">
-    <div class="container">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+<canvas id="field" aria-hidden="true"></canvas>
 
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav ">
-          <li><a href="./index.html" title="">01 : Home</a></li>
-          <li><a href="./works.html" title="">02 : Works</a></li>
-          <li><a href="./about.html" title="">03 : About me</a></li>
-          <li><a href="./contact.html" title="">04 : Contact</a></li>
-        </ul>
+<!-- ================= NAV ================= -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo" aria-label="Home">⟨SK|</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" data-nav>about</a></li>
+      <li><a href="#skills" data-nav>skills</a></li>
+      <li><a href="#timeline" data-nav>timeline</a></li>
+      <li><a href="#projects" data-nav>projects</a></li>
+      <li><a href="#contact" data-nav class="nav-cta">contact</a></li>
+    </ul>
+  </div>
+</nav>
 
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="status-pill"><span class="status-dot"></span>open to internships &amp; collaboration</div>
 
-      </div> 
+      <p class="ket-line" aria-hidden="true">|ψ⟩ = α|data⟩ + β|code⟩</p>
+      <h1 class="hero-title">Simanta <em>Karki</em></h1>
+      <p class="hero-subtitle">
+        Computer engineering student. I turn messy data into models,
+        and models into software — with mathematics as the common language.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View projects</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+
+      <p class="euler" aria-label="Euler's identity: e to the i pi plus one equals zero">
+        e<sup>iπ</sup> + 1 = 0
+      </p>
     </div>
-  </nav>
+
+    <div class="bloch-wrap">
+      <canvas id="bloch" aria-label="Animated Bloch sphere showing a qubit state vector"></canvas>
+      <p class="bloch-caption" id="blochCaption">|ψ⟩ = cos(θ/2)|0⟩ + e<sup>iφ</sup> sin(θ/2)|1⟩</p>
+      <p class="bloch-hint">drag to rotate · click to measure</p>
+    </div>
+  </div>
+
+  <a href="#about" class="scroll-cue" aria-label="Scroll to about section"><span></span></a>
 </header>
-<!-- Add your site or app content here -->
-  <div class="hero-full-container background-image-container white-text-container" style="background-image: url('./assets/images/space.jpg')">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="hero-full-wrapper">
-            <div class="text-content">
-              <h1>Hello,<br>
-                <span id="typed-strings">
-                  <span>I'm Simanta Karki</span>
-                </span>
-                <span id="typed"></span>
-              </h1>
+
+<main>
+
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <p class="section-kicker">⟨ who | am ⟩</p>
+    <h2 class="section-title">About</h2>
+
+    <div class="about-grid">
+      <div class="about-photo-wrap">
+        <div class="about-photo">
+          <img src="./assets/images/profil-duotone.png" alt="Portrait of Simanta Karki" loading="lazy">
+        </div>
+        <div class="about-photo-frame" aria-hidden="true"></div>
+      </div>
+
+      <div class="about-content">
+        <p class="about-lede">
+          I'm a Computer Engineering student with a growing focus on
+          <strong>Data Science and Machine Learning</strong> — I like taking
+          messy, real-world problems and turning them into systems that
+          learn, predict, and scale.
+        </p>
+        <p>
+          Machine learning is applied linear algebra, probability and calculus
+          wearing a software costume, and that's what keeps me hooked. I'm based in
+          Bhaktapur, Nepal, and open to internships, collaborations, and
+          interesting problems.
+        </p>
+
+        <div class="education-list">
+          <div class="education-item">
+            <div class="education-main">
+              <span class="education-school">Khwopa Engineering College</span>
+              <span class="education-degree">B.E. in Computer Engineering</span>
             </div>
+            <span class="education-meta">CGPA 3.50</span>
+          </div>
+          <div class="education-item">
+            <div class="education-main">
+              <span class="education-school">Kanjirowa National High School</span>
+              <span class="education-degree">Higher Secondary</span>
+            </div>
+            <span class="education-meta">77%</span>
+          </div>
+          <div class="education-item">
+            <div class="education-main">
+              <span class="education-school">Little Garden English Secondary School</span>
+              <span class="education-degree">Secondary Education</span>
+            </div>
+            <span class="education-meta">86.88%</span>
           </div>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function (event) {
-     type();
-     movingBackgroundImage();
-  });
-</script>
+<div class="divider" aria-hidden="true"><span>∑</span></div>
 
+<!-- ================= SKILLS ================= -->
+<section class="section" id="skills">
+  <div class="section-inner">
+    <p class="section-kicker">⟨ basis | states ⟩</p>
+    <h2 class="section-title">What I work with</h2>
 
-<script type="text/javascript" src="./main.70a66962.js"></script></body>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <span class="glyph" aria-hidden="true">λ</span>
+        <h3>Languages</h3>
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">C / C++</span>
+          <span class="tag">MATLAB</span><span class="tag">JavaScript</span><span class="tag">SQL</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <span class="glyph" aria-hidden="true">∇</span>
+        <h3>Data &amp; ML</h3>
+        <div class="tag-row">
+          <span class="tag">Pandas / NumPy</span><span class="tag">Scikit-learn</span>
+          <span class="tag">TensorFlow</span><span class="tag">PyTorch</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <span class="glyph" aria-hidden="true">∫</span>
+        <h3>Tools &amp; Infra</h3>
+        <div class="tag-row">
+          <span class="tag">Git / GitHub</span><span class="tag">Linux</span>
+          <span class="tag">Docker</span><span class="tag">Jupyter</span><span class="tag">LaTeX</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <span class="glyph" aria-hidden="true">⊗</span>
+        <h3>Web</h3>
+        <div class="tag-row">
+          <span class="tag">HTML / CSS</span><span class="tag">Flask</span><span class="tag">REST APIs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
+<div class="divider" aria-hidden="true"><span>π</span></div>
+
+<!-- ================= TIMELINE ================= -->
+<section class="section" id="timeline">
+  <div class="section-inner">
+    <p class="section-kicker">iħ ∂ψ/∂t = Ĥψ</p>
+    <h2 class="section-title">Evolution over time</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-node"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2019</span>
+          <h3>First programs in C</h3>
+          <p>Built a Bomberman-style game in C/C++ and started publishing code on GitHub.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-node"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2020 — 2023</span>
+          <h3>Python &amp; algorithms</h3>
+          <p>Worked through Python end to end — OOP, generators, sorting algorithms,
+             regex, testing — plus web scraping and machine-learning course material.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-node"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2022</span>
+          <h3>Signature verification in MATLAB</h3>
+          <p>First applied pattern-recognition project: feature extraction from signature
+             images with a GUI front end. Also learned LaTeX for typesetting mathematics.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-node"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">2022 — Present</span>
+          <h3>B.E. Computer Engineering</h3>
+          <p>Khwopa Engineering College. Data structures, algorithms, databases,
+             and a growing focus on machine learning and applied statistics.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"><span>∞</span></div>
+
+<!-- ================= PROJECTS ================= -->
+<section class="section" id="projects">
+  <div class="section-inner">
+    <p class="section-kicker">⟨ projects | github ⟩</p>
+    <h2 class="section-title">Selected work</h2>
+    <p class="section-lede">
+      A few things I've built, pulled from my
+      <a class="inline-link" href="https://github.com/SimantaKarki" target="_blank" rel="noopener">GitHub</a>.
+    </p>
+
+    <div class="projects-grid">
+
+      <article class="project-card">
+        <span class="project-ket">|signature⟩</span>
+        <h3>Signature Verification</h3>
+        <p>Handwritten-signature verification in MATLAB. Signature images are binarised,
+           thinned to a skeleton, and reduced to geometric features such as centre of
+           mass, with a GUI front end.</p>
+        <div class="tag-row small"><span class="tag">MATLAB</span><span class="tag">Image processing</span><span class="tag">Feature extraction</span></div>
+        <div class="project-links">
+          <a href="https://github.com/SimantaKarki/signatureverification" target="_blank" rel="noopener" class="project-link">Code →</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-ket">|python⟩</span>
+        <h3>Python Lab</h3>
+        <p>My Python workbook: sorting algorithms (merge, quick, bubble), generators,
+           decorators, regex and testing, plus small projects — a sentiment-analysis
+           notebook, a tic-tac-toe game, an email sender, and a password checker.</p>
+        <div class="tag-row small"><span class="tag">Python</span><span class="tag">Algorithms</span><span class="tag">Jupyter</span></div>
+        <div class="project-links">
+          <a href="https://github.com/SimantaKarki/Python" target="_blank" rel="noopener" class="project-link">Code →</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-ket">|bomberman⟩</span>
+        <h3>Bomberman</h3>
+        <p>A Bomberman-style arcade game written in C/C++ with menus, mouse support,
+           bombs and bricks — where my programming started.</p>
+        <div class="tag-row small"><span class="tag">C / C++</span><span class="tag">Game logic</span></div>
+        <div class="project-links">
+          <a href="https://github.com/SimantaKarki/Bomberman" target="_blank" rel="noopener" class="project-link">Code →</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-ket">|LaTeX⟩</span>
+        <h3>LaTeX Training</h3>
+        <p>Typeset assignments, a mid-term defence presentation and font-formatting
+           experiments — the toolchain I use to write mathematics properly.</p>
+        <div class="tag-row small"><span class="tag">LaTeX</span><span class="tag">Typesetting</span></div>
+        <div class="project-links">
+          <a href="https://github.com/SimantaKarki/LaTeX_training" target="_blank" rel="noopener" class="project-link">Code →</a>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="projects-more">
+      Also studying: <a class="inline-link" href="https://github.com/SimantaKarki/handson-ml" target="_blank" rel="noopener">handson-ml</a>,
+      <a class="inline-link" href="https://github.com/SimantaKarki/mit-deep-learning" target="_blank" rel="noopener">MIT deep learning</a>,
+      <a class="inline-link" href="https://github.com/SimantaKarki/Real-Time-Voice-Cloning" target="_blank" rel="noopener">real-time voice cloning</a> (forked, for learning).
+    </p>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"><span>√</span></div>
+
+<!-- ================= CONTACT ================= -->
+<section class="section" id="contact">
+  <div class="section-inner">
+    <p class="section-kicker">⟨ measure | contact ⟩</p>
+    <h2 class="section-title">Let's talk</h2>
+    <p class="section-lede">
+      Have a project, an opportunity, or just want to say hi? My inbox is open.
+    </p>
+
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:simantakarki11@gmail.com">
+        <span class="contact-label">Email</span>
+        <span class="contact-value">simantakarki11@gmail.com</span>
+      </a>
+      <a class="contact-card" href="tel:+9779860963831">
+        <span class="contact-label">Phone</span>
+        <span class="contact-value">+977 986-096-3831</span>
+      </a>
+      <div class="contact-card contact-card-static">
+        <span class="contact-label">Location</span>
+        <span class="contact-value">Katunje-05, Bhaktapur, Nepal</span>
+      </div>
+    </div>
+
+    <div class="social-row">
+      <a href="https://github.com/SimantaKarki" target="_blank" rel="noopener" class="social-link">GitHub</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© <span id="year"></span> Simanta Karki</span>
+    <span class="footer-tag">“Mathematics is the language in which God has written the universe.” — Galileo</span>
+  </div>
+</footer>
+
+<script src="./script.js"></script>
+</body>
 </html>
